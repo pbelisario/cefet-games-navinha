@@ -54,13 +54,14 @@ public class LaserShot implements Shot {
         return !area.overlaps(bounds);
     }
 
+            
     @Override
     public boolean collidesWith(Collidable other) {
         // Laser vs Asteroid: rect vs rect
         // Laser vs Vortex: rect vs rect
         // Laser vs Ship: nada
         if (other instanceof Asteroid || other instanceof VortexShot) {
-            return Collision.rectsOverlap(bounds, other.getMinimumBoundingRectangle());
+            return Collision.rectsCirclesOverlap(bounds, other.getMinimumEnclosingBall());
         } else {
             return false;
         }

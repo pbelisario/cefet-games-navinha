@@ -80,7 +80,7 @@ public class Asteroid implements Entity, Collidable {
                 MathUtils.random(area.width),
                 MathUtils.random(minimumY, area.height));
         radius = MathUtils.random(15, 25);
-        bounds.set(position.x - radius, position.y, radius * 2, radius * 2);
+        bounds.set(position.x - radius *2, position.y, radius * 2, radius * 2);
         circle.set(position, radius);
         speed = MathUtils.random(10f, 50f);
         angularSpeed = MathUtils.random(30f, 100f);
